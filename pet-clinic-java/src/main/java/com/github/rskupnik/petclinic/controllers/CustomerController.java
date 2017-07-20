@@ -33,9 +33,7 @@ public class CustomerController {
     public List<String> getAllCustomersFormatted() {
         return ((List<Customer>) customerRepository.findAll())
                 .stream()
-                .map(
-                    customer -> customer.getFirstName()+" "+customer.getLastName()
-                )
+                .map(Customer::toString)
                 .collect(Collectors.toList());
     }
 
